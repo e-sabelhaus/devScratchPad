@@ -1,0 +1,19 @@
+package testFoo;
+
+class A { 
+
+	public String s;
+
+	public String A(String newS) {
+
+		s = newS;
+		
+		return s;
+	}
+	
+
+	public void print() {
+
+		System.out.print(s);
+	}
+}

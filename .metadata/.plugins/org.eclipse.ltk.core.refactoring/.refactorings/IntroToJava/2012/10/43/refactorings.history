@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;shuffleCards.dealCards.java&apos; to &apos;SabelhausHW4.java&apos;&#x0D;&#x0A;- Original project: &apos;IntroToJava&apos;&#x0D;&#x0A;- Original element: &apos;shuffleCards.dealCards.java&apos;&#x0D;&#x0A;- Renamed element: &apos;shuffleCards.SabelhausHW4.java&apos;" description="Rename compilation unit &apos;dealCards.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;shuffleCards{dealCards.java" name="SabelhausHW4.java" references="false" stamp="1350854787908" version="1.0"/>
+</session>

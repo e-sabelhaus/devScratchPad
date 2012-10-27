@@ -1,0 +1,16 @@
+package testFoo;
+
+class A { 
+
+	public String s;
+
+	public A(String newS) {
+
+		s = newS;
+	}
+
+	public @Override String toString() {
+	
+		System.out.print(s);
+	}
+}

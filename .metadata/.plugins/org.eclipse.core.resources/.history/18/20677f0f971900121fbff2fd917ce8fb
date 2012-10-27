@@ -1,0 +1,31 @@
+package shuffleCards;
+
+public class dealCards {
+ 
+    public static void main(String[] args) {
+
+   
+
+    	deck deck = new deck();
+
+        card C;
+
+ 
+
+        System.out.println( deck.getTotalCards() );
+
+ 
+
+       while (deck.getTotalCards()!= 0 )
+
+       {
+
+           C = deck.drawFromDeck();
+
+         System.out.println( C.toString() );
+
+       }
+
+    }
+
+}

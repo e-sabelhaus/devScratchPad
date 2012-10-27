@@ -1,0 +1,17 @@
+package testFoo;
+
+class A { 
+
+	String s;
+
+	A(String newS) {
+
+		s = newS;
+
+	}
+
+	public void print() {
+
+		System.out.print(s);
+	}
+}
