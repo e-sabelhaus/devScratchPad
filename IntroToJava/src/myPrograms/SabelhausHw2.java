@@ -4,7 +4,7 @@
 package myPrograms;
 
 /**
- * @author Eric
+ * @author Epic
  *
  */
 //Import dependencies
@@ -14,6 +14,7 @@ public class SabelhausHw2 {
 	//Declare Main
 	public static void main(String[] args) {
 		//Create input scanner
+		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
 		//Declare Integers to be used in the program
 		int count = 0, num, sum = 0;

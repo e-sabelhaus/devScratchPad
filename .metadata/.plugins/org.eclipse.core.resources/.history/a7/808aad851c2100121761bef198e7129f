@@ -1,0 +1,22 @@
+package car;
+
+import javax.swing.JOptionPane;
+
+public class CarTest {
+	
+	public static void main(String[] args) {
+		
+		String make = JOptionPane.showInputDialog("Input Make");
+		
+		String model = JOptionPane.showInputDialog("Input Model");
+		
+		String year = JOptionPane.showInputDialog("Input Year");
+		
+		String price = JOptionPane.showInputDialog("Input Price");
+		
+		Car car1 = new Car(make, model, year, price);
+		
+		System.out.println(car1);
+	}
+
+}
