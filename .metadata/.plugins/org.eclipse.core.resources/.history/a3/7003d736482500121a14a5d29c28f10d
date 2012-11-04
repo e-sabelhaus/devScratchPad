@@ -1,0 +1,13 @@
+package photoCorrecting;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+// public String setFiles(String in, String out) {
+//	FileInputStream in();
+//	FileOutputStream out = null;
+//}
+public class PixelDecryptor {
+	
+}

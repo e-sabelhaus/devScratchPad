@@ -1,0 +1,42 @@
+package photoCorrecting;
+
+import java.awt.Color;
+import java.io.*;
+import javax.swing.JOptionPane;
+
+import shuffleCards.Card;
+
+public class SabelhausPRJ3 {
+	
+	public static void main(String[] args) throws IOException {
+		
+		String fileFolder1 = JOptionPane.showInputDialog("Input encrypted photo path");
+		String fileFolder2 = JOptionPane.showInputDialog("Input decrypted photo path");
+		
+		InputStream photoFile = new FileInputStream(fileFolder1);
+		OutputStream photoFile2 = new FileOutputStream(fileFolder2);
+		
+		Picture picture1 = new Picture(photoFile);
+		
+		int totalPixels = picture1.getHeight() * picture1.getWidth();
+		
+		for (int row=0; row < picture1.getHeight(); row++) {
+			Color[] pixels = picture1.getPixels(row);
+			
+			Color[] newPixels = new Color[picture1.getHeight()];
+			for(int col=0; col < picture1.getWidth(); col++) {
+				Color pixel = pixels[col];
+				
+				Color newPixel = PixelDecryptor.decryptPixel(pixel);
+			
+				newPixels[col] = newPixel;
+			}
+			picture1.setPixels(row, newPixels);
+		}
+		
+		picture1.write(photoFile2);
+		
+		
+		
+	}
+}

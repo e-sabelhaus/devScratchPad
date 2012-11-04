@@ -1,0 +1,27 @@
+package photoCorrecting;
+
+import java.util.Scanner;
+import java.io.*;
+
+import javax.swing.JOptionPane;
+
+public class SabelhausPRJ3 {
+	
+	public static void main(String[] args) throws IOException {
+		
+		String fileFolder1 = JOptionPane.showInputDialog("Input encrypted photo path");
+		String fileFolder2 = JOptionPane.showInputDialog("Input decrypted photo path");
+		
+		InputStream photoFile = new FileInputStream(fileFolder1);
+		OutputStream photoFile2 = new FileOutputStream(fileFolder2);
+		
+		Picture picture1 = new Picture(photoFile);
+		
+		System.out.println(picture1);
+		
+		picture1.write(photoFile2);
+		
+		
+		
+	}
+}

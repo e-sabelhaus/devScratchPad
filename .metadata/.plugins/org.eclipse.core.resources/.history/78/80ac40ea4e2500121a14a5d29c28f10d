@@ -1,0 +1,42 @@
+package photoCorrecting;
+
+import java.awt.Color;
+import java.io.*;
+
+
+public class PixelDecryptor {
+	
+	private String photo = " ";
+	
+	public String getPhoto() {
+		return photo;
+	}
+	
+	public void setPhoto(String newPhoto) {
+		photo = newPhoto;
+	}
+	
+	public FileInputStream setFile(String photo) throws FileNotFoundException {
+	File file = new File(photo);
+	
+	FileInputStream photoFile = new FileInputStream(file);
+	
+	return photoFile;
+	}
+	PixelDecryptor(FileInputStream photoFile) throws IOException {
+		Picture picture = new Picture(photoFile);
+	}
+	
+	public Color decryptPixel(Color pixel) {
+		return pixel;
+		
+	}
+	public int getPixelCount() {
+		return 0;
+		
+	}
+	public int[] getMaxColorValues() {
+		return null;
+		
+	}
+}

@@ -1,0 +1,78 @@
+package photoCorrecting;
+
+import java.awt.Color;
+
+public class PixelDecryptor {
+	
+	private static int[] maxColorValue = null;
+	private static int pixelCount = 0;
+	private static Color decryptedPixel = null;
+	
+    
+    
+	/**
+     * This is all the file will do
+     * 
+     * parse picture1
+     *  
+     * Generate a toString for the output            
+     *            
+     * filter green and blue out
+     * 
+     * multiply red by 10
+     * 
+     * generate decrypted constructor
+     * 
+     * output data for picture2
+     */
+	
+	PixelDecryptor(int newPixelCount, int[] newMaxColorValue) {
+		pixelCount = newPixelCount;
+		maxColorValue = newMaxColorValue;
+	}
+	
+	public static Color decryptPixel(Color pixel) {
+        int red = pixel.getRed();
+        int green = pixel.getGreen();
+        int blue = pixel.getBlue();
+        int rDecrypt = red*10;
+        int gDecrypt = green*0;
+        int bDecrypt = blue*0;
+        decryptedPixel  = new Color(rDecrypt, gDecrypt, bDecrypt);
+		return decryptedPixel;
+	}
+	public static int getPixelCount(int height, int width) {
+		pixelCount = height * width;
+		
+		return pixelCount;
+	}
+	
+	public void setPixelCount(int newPixelCount) {
+		pixelCount = newPixelCount;
+	}
+	
+	public int[] getMaxColorValues(Color maxRGB) {
+		
+		maxRGB.getRGB();
+		
+		return maxColorValue;	
+	}
+	
+	public void setMaxColorValues(int[] newMaxColorValue) {
+		maxColorValue = newMaxColorValue;	
+		}
+	public String colorValues(int[] maxColorValue) {
+		int numR = maxColorValue[0];
+		int numG = maxColorValue[1];
+		int numB = maxColorValue[2];
+		
+		String red = Integer.toString(numR);
+		String green = Integer.toString(numG);
+		String blue = Integer.toString(numB);
+		
+		String colors = "";
+		
+		return colors;
+	}
+	
+}

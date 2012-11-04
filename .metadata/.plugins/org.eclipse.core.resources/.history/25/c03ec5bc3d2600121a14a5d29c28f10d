@@ -1,0 +1,35 @@
+package testFoo;
+
+public class MaxArray {
+
+	public static int findMax(int[] [] data) {
+
+		  if (data.length==0){  //check to see if array is empty and print message if it is
+
+		        System.out.println("Empty Array");
+
+		         break;    //if empty array, leave method
+
+		     }
+
+		else  {
+
+		    int max=data[0][0];   //initialize max value to first element
+
+		    for (int row = 0; row<data.length; row++) { // scan rows of array
+
+		        for (int column=0; column<data[row].length; column++){  //scan columns of array
+
+		             if (max<data[row][column])  //if next element larger, move to max variable
+
+		                  max=data[row][column];
+
+		              }//end column scan
+
+		       } // end row scan
+
+		    return max;   //return max value
+
+		}//end else
+
+		} // end method

@@ -1,0 +1,52 @@
+package photoCorrecting;
+
+import java.awt.Color;
+import java.io.*;
+
+
+public class PixelDecryptor {
+	
+    private int[] maxColorValue = null;
+	private int pixelCount = (Integer) null;
+    
+    
+	/**
+     * This is all the file will do
+     * 
+     * parse picture1
+     *  
+     * Generate a toString for the output            
+     *            
+     * filter green and blue out
+     * 
+     * multiply red by 10
+     * 
+     * generate decrypted constructor
+     * 
+     * output data for picture2
+     */
+	
+	PixelDecryptor(InputStream file) {
+		
+	}
+	
+	public Color decryptPixel(Color pixel) {
+		return pixel;
+		
+	}
+	public int getPixelCount() {
+		return pixelCount;
+	}
+	
+	public void setPixelCount(int newPixelCount) {
+		pixelCount = newPixelCount;
+	}
+	
+	public int[] getMaxColorValues() {
+		return maxColorValue;	
+	}
+	
+	public void setMaxColorValues(int[] newMaxColorValue) {
+		maxColorValue = newMaxColorValue;	
+		}
+}

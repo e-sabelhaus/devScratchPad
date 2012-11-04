@@ -1,0 +1,10 @@
+package photoCorrecting;
+
+import java.util.Scanner;
+
+public class SabelhausPRJ3 {
+	
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,16 @@
+package photoCorrecting;
+
+import java.util.Scanner;
+
+public class SabelhausPRJ3 {
+	
+	public static void main(String[] args) {
+		@SuppressWarnings("resource")
+		Scanner input = new Scanner(System.in);
+		
+		String fileFolder = input.toString();
+		
+		PixelDecryptor encrypted = new PixelDecryptor(fileFolder);
+		
+	}
+}

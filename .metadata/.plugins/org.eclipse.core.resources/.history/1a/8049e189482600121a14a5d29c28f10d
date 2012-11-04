@@ -1,0 +1,63 @@
+package photoCorrecting;
+
+import java.awt.Color;
+import java.io.*;
+import javax.swing.JOptionPane;
+
+import shuffleCards.Card;
+
+class SabelhausPRJ3 {
+	
+	public static void main(String[] args) throws IOException {
+		
+		int[] localMax = new int[3];
+		
+		String fileFolder1 = JOptionPane.showInputDialog("Input encrypted photo path");
+		String fileFolder2 = JOptionPane.showInputDialog("Input decrypted photo path");
+		
+		InputStream photoFile = new FileInputStream(fileFolder1);
+		OutputStream photoFile2 = new FileOutputStream(fileFolder2);
+		
+		//Instantiate new picture object from .png file
+		Picture picture1 = new Picture(photoFile);
+		
+		//Calculate the total pixels, then print it to the console
+		int pixelCount = PixelDecryptor.getPixelCount(picture1.getHeight(), picture1.getWidth());
+		System.out.println("Total pixels:\t" + pixelCount);
+		
+		//Get the maximum Color Values
+		if (picture1.getHeight() == 0) {
+			System.out.println("No Data in Array");
+		
+		} else {
+			for (int row=0; row < picture1.getHeight(); row++) {
+				for (int col=0; row < picture1.getWidth(); row++) {
+					
+				}
+			}
+		}
+		
+		//Decrypt the picture
+		for (int row=0; row < picture1.getHeight(); row++) {
+			
+			Color[] pixels = picture1.getPixels(row);
+			
+			for(int col=0; col < picture1.getWidth(); col++) {
+				int[] maxRGB = PixelDecryptor.getMaxColorValues(pixels[col]);
+				for(int i=0; i < maxRGB.length; i++) {
+					localMax[i] = PixelDecryptor.setMaxColorValues(maxRGB[i], localMax[i]);
+				}
+				pixels[col] = PixelDecryptor.decryptPixel(pixels[col]);
+			}
+			picture1.setPixels(row, pixels);
+		}
+		System.out.println("Max red value:\t" + localMax[0]);
+		System.out.println("Max green value:\t" + localMax[1]);
+		System.out.println("Max blue value:\t" + localMax[2]);
+		
+		picture1.write(photoFile2);
+		
+		
+		
+	}
+}
