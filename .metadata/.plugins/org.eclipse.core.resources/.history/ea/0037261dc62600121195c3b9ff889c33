@@ -1,0 +1,64 @@
+package smallManufacturingCompany;
+
+import javax.swing.JOptionPane;
+
+public class TestOrders {
+
+	/**
+	 * @param args
+	 * @throws Exception 
+	 */
+	public static void main(String[] args) throws Exception {
+		String name1 = JOptionPane.showInputDialog("Input Client Name:");
+		String sID1 = JOptionPane.showInputDialog("Input Order ID:");
+		String sValue1 = JOptionPane.showInputDialog("Input Order Value:");
+		String sInterest1 = JOptionPane.showInputDialog("Input Credit Order Interest Value:");
+		
+		int id1 = Integer.parseInt(sID1);
+		int value1 = Integer.parseInt(sValue1);
+		double interest1 = Double.parseDouble(sInterest1);
+		
+		Order ord1 = new Order(name1, id1, value1);
+		CreditOrder cord1 = new CreditOrder(name1, id1, value1, interest1);
+		
+		System.out.println(ord1.toString());
+		System.out.println(cord1.toString());
+		
+		int orderAmt1 = ord1.getOrderValue(value1);
+		double corderAmt1 = cord1.getCreditOrderTotalValue(value1, interest1);
+		
+		
+		System.out.println("Amount earned from Order: " + orderAmt1);
+		System.out.println("Amount earned from Order: " + corderAmt1);
+		
+		String name2 = JOptionPane.showInputDialog("Input Client Name:");
+		String sID2 = JOptionPane.showInputDialog("Input Order ID:");
+		String sValue2 = JOptionPane.showInputDialog("Input Order Value:");
+		String sInterest2 = JOptionPane.showInputDialog("Input Credit Order Interest Value:");
+		
+		int id2 = Integer.parseInt(sID2);
+		int value2 = Integer.parseInt(sValue2);
+		double interest2 = Double.parseDouble(sInterest2);
+		
+		CreditOrder cord2 = new CreditOrder(name2, id2, value2, interest2);
+		
+		System.out.println(cord2.toString());
+		
+		double corderAmt2 = cord2.getCreditOrderTotalValue(value2, interest2);
+		
+		System.out.println("Amount earned from Order: " + corderAmt2);
+		
+		if (cord1.getClientName() == cord2.getClientName()){
+			System.out.println("Existing Credit Customer: " + cord2.getClientName());
+		} else {
+			System.out.println("New Credit Customer " + cord2.getClientName());
+		}
+		
+		if (ord1.getOrderValue(value1) > cord2.getCreditOrderTotalValue(value2, interest2)) {
+			System.out.println("Greatest profit earned from Order ID: " + ord1.getOrderID(id1) + "\t $" + orderAmt1);
+		} else {
+			System.out.println("Greatest profit earned from: " + cord2.getOrderID(id2) + "\t" + corderAmt2);
+		}
+	}
+
+}

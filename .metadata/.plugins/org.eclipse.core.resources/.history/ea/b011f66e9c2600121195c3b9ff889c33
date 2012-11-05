@@ -1,0 +1,14 @@
+package smallManufacturingCompany;
+
+public class CreditOrder extends Order {
+
+	public CreditOrder(String clientName, int orderID, int orderValue, int interest) {
+		super(clientName,orderID,orderValue);
+		// TODO Auto-generated constructor stub
+		
+	}
+	
+	
+	
+	
+}

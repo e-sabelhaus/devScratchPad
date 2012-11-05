@@ -1,0 +1,45 @@
+package smallManufacturingCompany;
+//orderId, clientName and orderValue
+public class Order {
+	private String clientName = " ";
+	private int orderValue = 0;
+	private int orderID = 0;
+	
+	public Order(String newClientName, int newOrderID, int newOrderValue) {
+		
+	}
+	
+	public int getOrderID(int id) throws Exception{
+		if(id < 0) {
+			throw new Exception("Exception: Order ID Cannot be less than 0!");
+		}
+		orderID = id;
+		
+		return orderID;
+	}
+	public void setOrderID(int newOrderID) {
+		orderID = newOrderID;
+	}
+	
+	public String getClientName() {
+		return clientName;
+	}
+	
+	public void setClientName(String newClientName) {
+		clientName = newClientName;
+	}
+	
+	public int getOrderValue(int value) throws Exception{
+		if(value < 0) {
+			throw new Exception("Exception: Order Value Cannot be less than 0!");
+		}
+		orderValue = value;
+		
+		return orderValue;
+	}
+	
+	public void setOrderValue(int newOrderValue) {
+		orderValue = newOrderValue;
+	
+	}
+}

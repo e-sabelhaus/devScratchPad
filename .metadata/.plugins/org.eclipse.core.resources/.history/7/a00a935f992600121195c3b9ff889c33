@@ -1,0 +1,12 @@
+package smallManufacturingCompany;
+
+public class CreditOrder extends Order {
+
+	public CreditOrder() {
+		
+	}
+	
+	
+	
+	
+}

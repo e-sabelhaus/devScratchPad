@@ -1,0 +1,28 @@
+package smallManufacturingCompany;
+
+public class CreditOrder extends Order {
+
+	private int interest = 0;
+
+	public CreditOrder(String clientName, int orderID, int orderValue, int interest) {
+		super(clientName,orderID,orderValue);
+		// TODO Auto-generated constructor stub
+		this.interest  = interest;
+	}
+	
+	public int getInterest(int percent) throws Exception{
+		if(percent < 0) {
+			throw new Exception("Exception: Interest cannot be less than 0!");
+		}
+		
+		interest = percent;
+		
+		return interest;
+	}
+	public void setInterest(int interest) {
+		this.interest = interest;
+	}
+	public @Override String toString() {
+		return super.toString() + "\n Interest Percentage: " + interest;
+	}
+}
