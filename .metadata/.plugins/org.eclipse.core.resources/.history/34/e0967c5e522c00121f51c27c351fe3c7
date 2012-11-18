@@ -1,0 +1,34 @@
+/**
+ * 
+ */
+package validInteger;
+
+import javax.swing.JOptionPane;
+/**
+ * @author Eric
+ *
+ */
+class CheckValue {
+	private static int number;
+
+	public static void main(String[] args) throws IllegalArgumentException {
+		boolean isCorrect = false;
+		do {
+		try {
+			String s = JOptionPane.showInputDialog(null, "Input initialization value between 9 and 99");
+			number = Integer.parseInt(s);
+			if (number < 9 && number > 99) {
+				throw new IllegalArgumentException("Number cannot be less than 9 or greater than 99!");
+			} else {
+				isCorrect = true;
+			}
+			} catch(NumberFormatException ex) {
+				throw new IllegalArgumentException
+				("Not a number!: " + number);
+			}
+			
+		} while(isCorrect == false);
+			
+		System.out.println("Thank you. Initialization completed");
+	}
+}

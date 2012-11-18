@@ -1,0 +1,34 @@
+/**
+ * 
+ */
+package hw3;
+
+/**
+ * @author Eric Sabelhaus
+ *
+ */
+public interface WarehouseOperations {
+	/*
+	 * I believe an a double should represent the add to and deliver from values
+	 * these variables are constantly changing numeric values, and may require 
+	 * double values, depending on the type of stock they provide
+	 * 
+	 * The number returned should be based off what is currently available in a document
+	 * that is directly edited by programs using this interface. 
+	 * 
+	 * A superclass would interface with the file, and in turn, act appropriately based off the interface
+	 */
+	public double addToStock(double amount, int[] currentStock, int stockNumber, boolean isFull) {
+		
+	}
+	
+	
+	public double deliverFromStock(double amount, int[] currentStock, int stockNumber, boolean isEmpty);
+	
+	/*
+	 * 
+	 */
+	public boolean isFullStock(int[] currentStock, int stockNumber, int[] maxStock);
+	public boolean isEmptyStock(int[] currentStock, int stockNumber);
+
+}

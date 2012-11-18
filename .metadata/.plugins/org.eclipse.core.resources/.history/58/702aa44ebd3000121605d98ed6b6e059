@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+package gui;
+
+import javax.swing.*;
+import java.awt.event.*;
+
+/**
+ * @author Eric
+ *
+ */
+public class WelcomeGUI extends JFrame {
+	JTextField a = new JTextField("First Name");
+	JTextField b = new JTextField("Last Name");
+	JTextField c = new JTextField("Age");
+	JTextField d = new JTextField(a + "/t" + b + "/t" + c);
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

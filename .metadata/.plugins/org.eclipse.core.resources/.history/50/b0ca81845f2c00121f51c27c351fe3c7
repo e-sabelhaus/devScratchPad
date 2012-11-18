@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package hw3;
+
+/**
+ * @author Eric
+ *
+ */
+public class WarehouseOperations {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -29,16 +29,15 @@ public class CreditOrder extends Order {
 	 * @throws Exception 
 	 * 
 	 */
-	public double getInterest(double percent) throws Exception{
-		if(percent < 0) {
-			throw new Exception("Exception: Interest cannot be less than 0!");
-		}
-		
+	public double getInterest(double percent) {
 		interest = percent;
 		
 		return interest;
 	}
-	public void setInterest(double interest) {
+	public void setInterest(double interest)  throws Exception{
+		if(interest < 0) {
+			throw new Exception("Exception: Interest cannot be less than 0!");
+		}
 		this.interest = interest;
 	}
 	/**

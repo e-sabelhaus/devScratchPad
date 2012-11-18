@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package hw3;
+
+/**
+ * @author Eric Sabelhaus
+ *
+ */
+public interface WarehouseOperations {
+
+	
+
+}

@@ -30,14 +30,14 @@ public class Order {
 	 * 
 	 */
 	public int getOrderID(int id) throws Exception{
-		if(id < 0) {
-			throw new Exception("Exception: Order ID cannot be less than 0!");
-		}
 		orderID = id;
 		
 		return orderID;
 	}
-	public void setOrderID(int orderID) {
+	public void setOrderID(int orderID) throws Exception{
+		if(orderID < 0) {
+			throw new Exception("Exception: Order ID cannot be less than 0!");
+		}
 		this.orderID = orderID;
 	}
 	/**
@@ -62,15 +62,16 @@ public class Order {
 	 * 
 	 * @throws Exception 
 	 */
-	public int getOrderValue(int value) throws Exception{
-		if(value < 0) {
-			throw new Exception("Exception: Order Value cannot be less than 0!");
-		}
+	public int getOrderValue(int value){
+
 		orderValue = value;
 		
 		return orderValue;
 	}
-	public void setOrderValue(int orderValue) {
+	public void setOrderValue(int orderValue) throws Exception{
+		if(orderValue < 0) {
+			throw new Exception("Exception: Order Value cannot be less than 0!");
+		}
 		this.orderValue = orderValue;
 	}
 	
