@@ -1,5 +1,8 @@
 package finalProject;
 /*
+ *Author: Eric Sabelhaus
+ *Class: ReadStoreShow
+ *
  * Import dependencies
  */
 import java.io.File;
@@ -37,7 +40,7 @@ public class ReadStoreShow {
 		/**
 		 * Read input file
 		 */
-		Scanner inFile = new Scanner(new File("C:/Users/Eric/workspace/IntermediateJava/bin/finalProject/ColorHexValues.txt"));
+		Scanner inFile = new Scanner(new File("ColorHexValues.txt"));
 		/*
 		 * Initialize ArrayLists
 		 */

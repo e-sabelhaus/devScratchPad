@@ -1,24 +1,16 @@
 package finalProject;
-
 /*
- *Author: Eric Sabelhaus
- *Class: ReadStoreShow
- *
  * Import dependencies
  */
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
-import javax.swing.*;
-import java.awt.event.*;
-import java.awt.*;
 /*
  * Define public class 
- *Supress warnings for serial value
  */
-@SuppressWarnings("serial")
-public class ReadStoreShow1 extends JFrame {
+public class ReadStoreShow {
 	/*
 	 * Initiate Private Static methods for array and string value
 	 */
@@ -35,30 +27,21 @@ public class ReadStoreShow1 extends JFrame {
 		}
 		return i;
 	}
-	/*
-	 * Initiate GUI methods
-	 */
-	protected static JFrame frame;
-	private String color;
-	public static JRadioButton button = new JRadioButton();
-	/*
-	 * Initialize ArrayLists
-	 */
-	public static ArrayList<String> colorsHex = new ArrayList<String>();
-	public static ArrayList<String> guiColors = new ArrayList<String>();
-	
-	
 	
 	/**
 	 * @param args
 	 * @throws IOException 
 	 */
-	public static void main(String[] args) throws FileNotFoundException{
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		/**
 		 * Read input file
 		 */
-		Scanner inFile = new Scanner(new File("ColorHexValues.txt"));
+		Scanner inFile = new Scanner(new File("C:/Users/Eric/workspace/IntermediateJava/bin/finalProject/ColorHexValues.txt"));
+		/*
+		 * Initialize ArrayLists
+		 */
+		ArrayList<String> colorsHex = new ArrayList<String>();
 		ArrayList<String> colors = new ArrayList<String>(); {
 			/**
 			 * File only as many lines as are available into the list
@@ -69,6 +52,8 @@ public class ReadStoreShow1 extends JFrame {
 			}
 			
 		}	
+
+		
 		/*
 		 * Close input file
 		 */
@@ -102,7 +87,6 @@ public class ReadStoreShow1 extends JFrame {
 		System.out.println(colors);
 		/*
 		 * Sort through colors and arrange in ascending order by Hex value
-		 * Also, generate guiColors for use with the GUI
 		 */
 		for(int x = 0; x < colors.size(); x++) {
 			for(int y = x + 1; y < colors.size(); y++) {
@@ -114,7 +98,6 @@ public class ReadStoreShow1 extends JFrame {
 					colors.add(currentMin);
 				}
 			}
-			guiColors.add(colors.get(x));
 		}
 		/*
 		 * Iterate the sorted list
@@ -122,64 +105,9 @@ public class ReadStoreShow1 extends JFrame {
 		Iterator<String> paintBrush = colors.iterator();		
 		while(paintBrush.hasNext()) {
 			String out = paintBrush.next();
-			
 			System.out.println(out);
 		}
-		/*
-		 * Initialize GUI
-		 */
-		frame = new ReadStoreShow1();
-		frame.pack();
-		frame.setTitle("Color Selections");
-		frame.setLocationRelativeTo(null);
-		frame.setVisible(true);
-		frame.setSize(800,400);
 	}
-	public ReadStoreShow1() {
-		
-		
-		//Dynamically generate radio button panel
-		JPanel rButtons = new JPanel();
-		
-		rButtons.setLayout(new GridLayout(guiColors.size(), 1));
-		ButtonGroup group = new ButtonGroup();
-		
-		for(int i = 0; i < guiColors.size(); i++){
-			cols = guiColors.get(i).split(" ");
-			final JRadioButton button = new JRadioButton(i + " " + cols[0]);
-			rButtons.add(button);
-			group.add(button);
-			button.addActionListener(new ActionListener() {
-				
-				/*
-				* Insert an action listener for each dynamically generated button
-				*/
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					cols = button.getText().split(" ");
-					int index = Integer.parseInt(cols[0]);
-					setColor(index);
-					Color colorShade = Color.decode(color);
-					frame.getContentPane().setBackground(colorShade);
-				}
-			});
-		}
-		/*
-		 * Add buttons and define layout
-		 */
-		add(rButtons, BorderLayout.WEST);
-		
-	}
-	
-	
-	/*
-	 * split value of arrayList and grab the color hex code
-	 */
-	private String setColor(int x) {
-		cols = guiColors.get(x).split(" ");
-		color = cols[1];
-		return color;
-		
-	}
+
 
 }

@@ -1,11 +1,5 @@
 package finalProject;
 
-/*
- *Author: Eric Sabelhaus
- *Class: ReadStoreShow
- *
- * Import dependencies
- */
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -13,20 +7,12 @@ import java.util.Scanner;
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
-/*
- * Define public class 
- *Supress warnings for serial value
- */
+
 @SuppressWarnings("serial")
 public class ReadStoreShow1 extends JFrame {
-	/*
-	 * Initiate Private Static methods for array and string value
-	 */
 	private static String[] cols = null;
 	private static String currentMin;
-	/*
-	 * Size checking method
-	 */
+	
 	public static int sizeCheck(int i) throws Exception{
 		if(i < 10) {
 			throw new Exception("Exception: Too Few Colors Listed, Please list 10 Colors");
@@ -35,19 +21,14 @@ public class ReadStoreShow1 extends JFrame {
 		}
 		return i;
 	}
-	/*
-	 * Initiate GUI methods
-	 */
+
 	protected static JFrame frame;
 	private String color;
-	public static JRadioButton button = new JRadioButton();
-	/*
-	 * Initialize ArrayLists
-	 */
+	
 	public static ArrayList<String> colorsHex = new ArrayList<String>();
 	public static ArrayList<String> guiColors = new ArrayList<String>();
 	
-	
+	public static JRadioButton button = new JRadioButton();
 	
 	/**
 	 * @param args
@@ -55,10 +36,7 @@ public class ReadStoreShow1 extends JFrame {
 	 */
 	public static void main(String[] args) throws FileNotFoundException{
 		// TODO Auto-generated method stub
-		/**
-		 * Read input file
-		 */
-		Scanner inFile = new Scanner(new File("ColorHexValues.txt"));
+		Scanner inFile = new Scanner(new File("C:/Users/Eric/workspace/IntermediateJava/bin/finalProject/ColorHexValues.txt"));
 		ArrayList<String> colors = new ArrayList<String>(); {
 			/**
 			 * File only as many lines as are available into the list
@@ -69,24 +47,16 @@ public class ReadStoreShow1 extends JFrame {
 			}
 			
 		}	
-		/*
-		 * Close input file
-		 */
 		inFile.close();
 		
 		
-		/*
-		 * Use size checking method
-		 */	
+			
 		int size = 0;
 		try {
 			size = sizeCheck(colors.size());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		/*
-		 * Run for loop to generate Hex colors array
-		 */
 		for(int i = 0; i < size; i++){
 			/**
 			 * using the array list tools to sort the hex value into their own array list
@@ -95,15 +65,10 @@ public class ReadStoreShow1 extends JFrame {
 			colorsHex.add(cols[1]);
 			
 		}
-		/*
-		 *Print Hex Colors and Colors for comparison 
-		 */
+		
 		System.out.println(colorsHex);
 		System.out.println(colors);
-		/*
-		 * Sort through colors and arrange in ascending order by Hex value
-		 * Also, generate guiColors for use with the GUI
-		 */
+		
 		for(int x = 0; x < colors.size(); x++) {
 			for(int y = x + 1; y < colors.size(); y++) {
 				int result = colorsHex.get(y).compareTo(colorsHex.get(x));
@@ -116,18 +81,13 @@ public class ReadStoreShow1 extends JFrame {
 			}
 			guiColors.add(colors.get(x));
 		}
-		/*
-		 * Iterate the sorted list
-		 */
+		
 		Iterator<String> paintBrush = colors.iterator();		
 		while(paintBrush.hasNext()) {
 			String out = paintBrush.next();
 			
 			System.out.println(out);
 		}
-		/*
-		 * Initialize GUI
-		 */
 		frame = new ReadStoreShow1();
 		frame.pack();
 		frame.setTitle("Color Selections");
@@ -151,9 +111,7 @@ public class ReadStoreShow1 extends JFrame {
 			group.add(button);
 			button.addActionListener(new ActionListener() {
 				
-				/*
-				* Insert an action listener for each dynamically generated button
-				*/
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					cols = button.getText().split(" ");
@@ -164,17 +122,12 @@ public class ReadStoreShow1 extends JFrame {
 				}
 			});
 		}
-		/*
-		 * Add buttons and define layout
-		 */
 		add(rButtons, BorderLayout.WEST);
 		
 	}
 	
 	
-	/*
-	 * split value of arrayList and grab the color hex code
-	 */
+	
 	private String setColor(int x) {
 		cols = guiColors.get(x).split(" ");
 		color = cols[1];
